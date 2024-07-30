@@ -3,7 +3,7 @@ import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { AppContainer } from './components/app-container'
+import { AppContainer } from '@/components/app-container'
 
 const $root = document.getElementById('root') as HTMLElement
 
