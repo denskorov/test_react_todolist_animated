@@ -75,30 +75,30 @@ export const TaskItem = (props: Props) => {
         <div
             ref={taskRef}
             className={`
-        relative
-        ease-in-out
-        duration-300
-        ${isDisappear ? DISAPPEAR_CLASS : 'z-10'}
-    `}
+                relative
+                ease-in-out
+                duration-300
+                ${isDisappear ? DISAPPEAR_CLASS : 'z-10'}
+            `}
         >
             <div
                 className="
-            flex
-            items-center
-            px-3
-            h-[48px]
-            my-[12px]
-            bg-component
-            dark:bg-component-dark
-            rounded-lg
-            gap-3
-            shadow-lg
-        "
+                    flex
+                    items-center
+                    px-3
+                    h-[48px]
+                    my-[12px]
+                    bg-component
+                    dark:bg-component-dark
+                    rounded-lg
+                    gap-3
+                    shadow-lg
+                "
             >
                 <button onClick={() => toggleDone()}>
                     {!isDone ? (
                         <BaseText>
-                            <MdCheckBoxOutlineBlank></MdCheckBoxOutlineBlank>
+                            <MdCheckBoxOutlineBlank />
                         </BaseText>
                     ) : (
                         <MdCheckBox className="text-primary"></MdCheckBox>
@@ -112,21 +112,21 @@ export const TaskItem = (props: Props) => {
                     <BaseText
                         innerref={labelRef}
                         className={`
-            px-3
-            truncate
-            inline
-            relative
-            after:content-['']
-            after:absolute
-            after:left-0
-            after:h-[2px]
-            after:top-[calc(50%+2px)]
-            after:bg-primary
-            after:ease-in-out
-            after:duration-300
-            after:transition-width
-            ${isDone ? 'after:w-full' : 'after:w-0'}
-        `}
+                            px-3
+                            truncate
+                            inline
+                            relative
+                            after:content-['']
+                            after:absolute
+                            after:left-0
+                            after:h-[2px]
+                            after:top-[calc(50%+2px)]
+                            after:bg-primary
+                            after:ease-in-out
+                            after:duration-300
+                            after:transition-width
+                            ${isDone ? 'after:w-full' : 'after:w-0'}
+                        `}
                     >
                         {props.task.title}
                     </BaseText>
@@ -136,7 +136,7 @@ export const TaskItem = (props: Props) => {
                     className="text-danger"
                     onClick={() => disappear(() => store.task.remove(props.task.id))}
                 >
-                    <MdDelete></MdDelete>
+                    <MdDelete />
                 </button>
             </div>
         </div>
