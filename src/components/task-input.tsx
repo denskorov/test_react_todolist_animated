@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
 import { useEffect, useRef, useState } from 'react'
 
-import { useStore } from '../stores'
+import { useStore } from '@/stores'
 
 export const TaskInput = observer(() => {
     const store = useStore()

@@ -1,6 +1,6 @@
 import { action, computed, makeAutoObservable, observable } from 'mobx'
 
-import { TaskInterface } from '../interfaces'
+import { TaskInterface } from '@/interfaces'
 
 const STORAGE_KEY = '@tasks'
 

@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react'
 import { useEffect } from 'react'
 
-import Logo from '../logo.svg'
-import { useStore } from '../stores'
+import Logo from '@/logo.svg'
+import { useStore } from '@/stores'
 import { TaskInput } from './task-input'
 import { TaskList } from './task-list'
 import { ThemeToggle } from './theme-toggle'

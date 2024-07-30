@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { MdCheckBox, MdCheckBoxOutlineBlank, MdDelete } from 'react-icons/md'
 
-import { TaskInterface } from '../interfaces'
-import { useStore } from '../stores'
+import { TaskInterface } from '@/interfaces'
+import { useStore } from '@/stores'
 import { BaseText } from './base-text'
 
 interface Props {

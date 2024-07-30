@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 
-import { useStore } from '../stores'
+import { useStore } from '@/stores'
 import { BaseText } from './base-text'
 import { TaskItem } from './task-item'
 

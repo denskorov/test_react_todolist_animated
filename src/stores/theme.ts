@@ -19,15 +19,7 @@ export class Theme {
 
     @action
     toggle() {
-        switch (this._themeMode) {
-            case 'dark':
-                this._themeMode = 'light'
-                break
-
-            default:
-                this._themeMode = 'dark'
-                break
-        }
+        this._themeMode = this._themeMode === 'light'? 'dark' : 'light'
 
         localStorage[STORAGE_KEY] = this._themeMode
     }

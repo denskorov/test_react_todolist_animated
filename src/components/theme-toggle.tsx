@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
 import { IoIosMoon, IoIosSunny } from 'react-icons/io'
 
-import { useStore } from '../stores'
+import { useStore } from '@/stores'
 
 const AFTER_LIGHT_CLASS = 'after:left-[3px] '
 const AFTER_DARK_CLASS = 'after:left-[calc(3px+18px+3px)]'
@@ -33,8 +33,8 @@ export const ThemeToggle = observer(() => {
             ${store.theme.mode(AFTER_LIGHT_CLASS, AFTER_DARK_CLASS)}
         `}
         >
-            <IoIosMoon></IoIosMoon>
-            <IoIosSunny></IoIosSunny>
+            <IoIosMoon />
+            <IoIosSunny />
         </button>
     )
 })
