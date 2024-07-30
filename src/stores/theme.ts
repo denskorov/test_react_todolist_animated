@@ -19,19 +19,13 @@ export class Theme {
 
     @action
     toggle() {
-        this._themeMode = this._themeMode === 'light'? 'dark' : 'light'
+        this._themeMode = this._themeMode === 'light' ? 'dark' : 'light'
 
         localStorage[STORAGE_KEY] = this._themeMode
     }
 
     @computed
     mode(light: any, dark: any) {
-        switch (this._themeMode) {
-            case 'dark':
-                return dark
-
-            default:
-                return light
-        }
+        return this._themeMode === 'light' ? light : dark
     }
 }
