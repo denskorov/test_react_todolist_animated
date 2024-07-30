@@ -4,7 +4,7 @@ import { TaskInterface } from '@/interfaces'
 
 const STORAGE_KEY = '@tasks'
 
-export class Task {
+export class TaskManager {
     constructor() {
         this.fetchs()
         makeAutoObservable(this)

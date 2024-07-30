@@ -21,10 +21,10 @@ export const AppContainer = observer(() => {
                     <img src={Logo} alt="logo"></img>
                     <div className="text-xl text-primary">Todo</div>
                 </div>
-                <ThemeToggle></ThemeToggle>
+                <ThemeToggle />
             </div>
-            <TaskInput></TaskInput>
-            <TaskList></TaskList>
+            <TaskInput />
+            <TaskList />
         </div>
     )
 })

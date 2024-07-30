@@ -19,10 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src"
   ],
-  "extends": "./tsconfig.paths.json" // 👈 add this line
+  "extends": "./tsconfig.paths.json"
+  // 👈 add this line
 }

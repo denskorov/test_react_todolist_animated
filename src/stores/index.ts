@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react'
 
-import { Task } from './task'
+import { TaskManager } from '@stores/task-manager'
 import { Theme } from './theme'
 
 const ctx = createContext({
     theme: new Theme(),
-    task: new Task()
+    task: new TaskManager()
 })
 
 export const useStore = () => useContext(ctx)

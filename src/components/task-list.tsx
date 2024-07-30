@@ -10,13 +10,13 @@ export const TaskList = observer(() => {
     return (
         <div className="mt-6">
             {store.task.tasks.map((task) => (
-                <TaskItem key={task.id} task={task}></TaskItem>
+                <TaskItem key={task.id} task={task} />
             ))}
             <BaseText className="p-3">
                 Completed ({store.task.completedTasks.length})
             </BaseText>
             {store.task.completedTasks.map((task) => (
-                <TaskItem key={task.id} task={task}></TaskItem>
+                <TaskItem key={task.id} task={task} />
             ))}
         </div>
     )
