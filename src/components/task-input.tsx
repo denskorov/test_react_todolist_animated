@@ -4,18 +4,18 @@ import { useEffect, useRef, useState } from 'react'
 import { useStore } from '@/stores'
 
 export const TaskInput = observer(() => {
-    const store = useStore()
+    const { taskManager } = useStore()
 
-    const [title, setTitle] = useState(store.task.taskEdit?.title)
+    const [title, setTitle] = useState(taskManager.taskEdit?.title)
 
     const inputRef = useRef<HTMLInputElement>(null)
 
     const submit = () => {
         if (title) {
-            if (store.task.taskEdit) {
-                store.task.update(store.task.taskEdit.id, title)
+            if (taskManager.taskEdit) {
+                taskManager.update(taskManager.taskEdit.id, title)
             } else {
-                store.task.add(title)
+                taskManager.add(title)
             }
 
             setTitle('')
@@ -23,26 +23,26 @@ export const TaskInput = observer(() => {
     }
 
     useEffect(() => {
-        if (store.task.taskEdit) {
-            setTitle(store.task.taskEdit?.title)
+        if (taskManager.taskEdit) {
+            setTitle(taskManager.taskEdit?.title)
             inputRef.current?.focus()
         }
-    }, [store.task.taskEdit])
+    }, [taskManager.taskEdit])
 
     return (
         <div
             className="
-            p-3 
-            bg-component 
-            dark:bg-component-dark
-            text-dark
-            dark:text-light
-            flex 
-            items-center
-            shadow-lg
-            rounded-lg
-            mt-7
-        "
+                p-3
+                bg-component
+                dark:bg-component-dark
+                text-dark
+                dark:text-light
+                flex
+                items-center
+                shadow-lg
+                rounded-lg
+                mt-7
+            "
         >
             <input
                 value={title}
@@ -57,7 +57,7 @@ export const TaskInput = observer(() => {
                 onClick={() => submit()}
                 className="bg-primary px-3 py-1.5 text-sm text-light rounded-lg"
             >
-                {store.task.taskEdit ? 'update' : 'add'}
+                {taskManager.taskEdit ? 'update' : 'add'}
             </button>
         </div>
     )

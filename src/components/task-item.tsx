@@ -13,7 +13,7 @@ const DISAPPEAR_CLASS = 'scale-75 -mb-[calc(48px+12px)] opacity-0 z-0'
 const DISAPEAR_DELAY = 120
 
 export const TaskItem = (props: Props) => {
-    const store = useStore()
+    const { taskManager } = useStore()
 
     const [isDone, setIsDone] = useState(props.task.isDone)
     const [isDisappear, setIsDisappear] = useState(true)
@@ -25,7 +25,7 @@ export const TaskItem = (props: Props) => {
         const transitionCallback = () => {
             setTimeout(() => {
                 disappear(() => {
-                    store.task.toggleDone(props.task.id)
+                    taskManager.toggleDone(props.task.id)
                 })
             }, DISAPEAR_DELAY)
 
@@ -107,7 +107,7 @@ export const TaskItem = (props: Props) => {
 
                 <div
                     className="flex-1 truncate cursor-pointer"
-                    onClick={() => store.task.edit(props.task)}
+                    onClick={() => taskManager.edit(props.task)}
                 >
                     <BaseText
                         innerref={labelRef}
@@ -134,7 +134,7 @@ export const TaskItem = (props: Props) => {
 
                 <button
                     className="text-danger"
-                    onClick={() => disappear(() => store.task.remove(props.task.id))}
+                    onClick={() => disappear(() => taskManager.remove(props.task.id))}
                 >
                     <MdDelete />
                 </button>

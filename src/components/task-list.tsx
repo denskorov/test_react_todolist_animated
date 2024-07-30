@@ -5,17 +5,19 @@ import { BaseText } from './base-text'
 import { TaskItem } from './task-item'
 
 export const TaskList = observer(() => {
-    const store = useStore()
+    const { taskManager } = useStore()
 
     return (
         <div className="mt-6">
-            {store.task.tasks.map((task) => (
+            {taskManager.tasks.map((task) => (
                 <TaskItem key={task.id} task={task} />
             ))}
+
             <BaseText className="p-3">
-                Completed ({store.task.completedTasks.length})
+                Completed ({taskManager.completedTasks.length})
             </BaseText>
-            {store.task.completedTasks.map((task) => (
+
+            {taskManager.completedTasks.map((task) => (
                 <TaskItem key={task.id} task={task} />
             ))}
         </div>

@@ -5,7 +5,7 @@ import { Theme } from './theme'
 
 const ctx = createContext({
     theme: new Theme(),
-    task: new TaskManager()
+    taskManager: new TaskManager()
 })
 
 export const useStore = () => useContext(ctx)
